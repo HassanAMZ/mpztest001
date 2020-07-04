@@ -20,6 +20,7 @@ class StudentList extends Component {
           </tr>
         </thead>
         <tbody>
+          {console.log(students)}
           {!students || students.length <= 0 ? (
             <tr>
               <td colSpan="6" align="center">
@@ -27,7 +28,7 @@ class StudentList extends Component {
               </td>
             </tr>
           ) : (
-            students.map(student => (
+            students.map((student) => (
               <tr key={student.pk}>
                 <td>{student.name}</td>
                 <td>{student.email}</td>

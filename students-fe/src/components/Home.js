@@ -9,7 +9,7 @@ import { API_URL } from "../constants";
 
 class Home extends Component {
   state = {
-    students: []
+    students: [],
   };
 
   componentDidMount() {
@@ -17,7 +17,7 @@ class Home extends Component {
   }
 
   getStudents = () => {
-    axios.get(API_URL).then(res => this.setState({ students: res.data }));
+    axios.get(API_URL).then((res) => this.setState({ students: res.data }));
   };
 
   resetState = () => {

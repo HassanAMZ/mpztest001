@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Fragment } from "react";
 import { Modal, ModalHeader, Button, ModalFooter } from "reactstrap";
 import { useState } from "react";
 import axios from "axios";
