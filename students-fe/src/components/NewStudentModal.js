@@ -4,12 +4,12 @@ import NewStudentForm from "./NewStudentForm";
 
 class NewStudentModal extends Component {
   state = {
-    modal: false
+    modal: false,
   };
 
   toggle = () => {
-    this.setState(previous => ({
-      modal: !previous.modal
+    this.setState((previous) => ({
+      modal: !previous.modal,
     }));
   };
 
@@ -35,7 +35,7 @@ class NewStudentModal extends Component {
 
     return (
       <Fragment>
-        {button}
+        {/* {button} */}
         <Modal isOpen={this.state.modal} toggle={this.toggle}>
           <ModalHeader toggle={this.toggle}>{title}</ModalHeader>
 
