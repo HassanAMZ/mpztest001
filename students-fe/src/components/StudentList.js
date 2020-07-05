@@ -3,7 +3,7 @@ import { Table } from "reactstrap";
 import NewStudentModal from "./NewStudentModal";
 
 import ConfirmRemovalModal from "./ConfirmRemovalModal";
-//material ui
+
 class StudentList extends Component {
   render() {
     const students = this.props.students;
