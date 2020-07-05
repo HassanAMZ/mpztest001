@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import { Col, Container, Row } from "reactstrap";
 import StudentList from "./StudentList";
-import NewStudentModal from "./NewStudentModal";
+// import NewStudentModal from "./NewStudentModal";
 
 import axios from "axios";
 
 import { API_URL } from "../constants";
-
 class Home extends Component {
   state = {
     students: [],
@@ -26,72 +25,31 @@ class Home extends Component {
 
   render() {
     return (
-      <Container style={{ marginTop: "20px" }}>
-        <Row>
-          <Col>
-            <StudentList
-              students={this.state.students}
-              resetState={this.resetState}
-            />
-          </Col>
-        </Row>
-        <Row>
+      <>
+        <Container style={{ marginTop: "20px" }}>
+          {this.state.students.map((student, index) => (
+            <div key={index}>
+              {console.log(student)}
+
+              <Row>
+                <Col>
+                  <StudentList
+                    students={student}
+                    resetState={this.resetState}
+                  />
+                </Col>
+              </Row>
+            </div>
+          ))}
+          {/* <Row>
           <Col>
             <NewStudentModal create={true} resetState={this.resetState} />
           </Col>
-        </Row>
-      </Container>
+        </Row> */}
+        </Container>
+      </>
     );
   }
 }
 
 export default Home;
-
-// import React, { Component } from "react";
-// import { Col, Container, Row } from "reactstrap";
-// import StudentList from "./StudentList";
-// import NewStudentModal from "./NewStudentModal";
-
-// import axios from "axios";
-
-// import { API_URL } from "../constants";
-
-// class Home extends Component {
-//   state = {
-//     students: [],
-//   };
-
-//   componentDidMount() {
-//     this.resetState();
-//   }
-
-//   getStudents = () => {
-//     axios.get(API_URL).then((res) => this.setState({ students: res.data }));
-//   };
-
-//   resetState = () => {
-//     this.getStudents();
-//   };
-
-//   render() {
-//     return (
-//       <Container style={{ marginTop: "20px" }}>
-//         <Row>
-//           <Col>
-//             <StudentList
-//               students={this.state.students}
-//               resetState={this.resetState}
-//             />
-//           </Col>
-//         </Row>
-//         <Row>
-//           <Col>
-//             <NewStudentModal create={true} resetState={this.resetState} />
-//           </Col>
-//         </Row>
-//       </Container>
-//     );
-//   }
-// }
-
-// export default Home;
