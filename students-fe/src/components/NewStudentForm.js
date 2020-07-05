@@ -8,24 +8,147 @@ import { API_URL } from "../constants";
 class NewStudentForm extends React.Component {
   state = {
     pk: 0,
-    name: "",
-    email: "",
-    document: "",
-    phone: ""
+    brand: "",
+    model: "",
+    network_technology: "",
+    twoG_bands: "",
+    threeoG_bands: "",
+    fourG_bands: "",
+    network_speed: "",
+    GPRS: "",
+    EDGE: "",
+    announced: "",
+    status: "",
+    dimentions: "",
+    weight_g: "",
+    weight_oz: "",
+    SIM: "",
+    display_type: "",
+    display_resolution: "",
+    display_size: "",
+    OS: "",
+    CPU: "",
+    Chipset: "",
+    GPU: "",
+    memory_card: "",
+    internal_memory: "",
+    RAM: "",
+    primary_camera: "",
+    secondary_camera: "",
+    loud_speaker: "",
+    audio_jack: "",
+    WLAN: "",
+    bluetooth: "",
+    GPS: "",
+    NFC: "",
+    radio: "",
+    USB: "",
+    sensors: "",
+    battery: "",
+    colors: "",
+    approx_price_EUR: "",
+    img_url: "",
+    FIELD41: "",
   };
 
   componentDidMount() {
     if (this.props.student) {
-      const { pk, name, document, email, phone } = this.props.student;
-      this.setState({ pk, name, document, email, phone });
+      const {
+        pk,
+        brand,
+        model,
+        network_technology,
+        twoG_bands,
+        threeoG_bands,
+        fourG_bands,
+        network_speed,
+        GPRS,
+        EDGE,
+        announced,
+        status,
+        dimentions,
+        weight_g,
+        weight_oz,
+        SIM,
+        display_type,
+        display_resolution,
+        display_size,
+        OS,
+        CPU,
+        Chipset,
+        GPU,
+        memory_card,
+        internal_memory,
+        RAM,
+        primary_camera,
+        secondary_camera,
+        loud_speaker,
+        audio_jack,
+        WLAN,
+        bluetooth,
+        GPS,
+        NFC,
+        radio,
+        USB,
+        sensors,
+        battery,
+        colors,
+        approx_price_EUR,
+        img_url,
+        FIELD41,
+      } = this.props.student;
+      this.setState({
+        pk,
+        brand,
+        model,
+        network_technology,
+        twoG_bands,
+        threeoG_bands,
+        fourG_bands,
+        network_speed,
+        GPRS,
+        EDGE,
+        announced,
+        status,
+        dimentions,
+        weight_g,
+        weight_oz,
+        SIM,
+        display_type,
+        display_resolution,
+        display_size,
+        OS,
+        CPU,
+        Chipset,
+        GPU,
+        memory_card,
+        internal_memory,
+        RAM,
+        primary_camera,
+        secondary_camera,
+        loud_speaker,
+        audio_jack,
+        WLAN,
+        bluetooth,
+        GPS,
+        NFC,
+        radio,
+        USB,
+        sensors,
+        battery,
+        colors,
+        approx_price_EUR,
+        img_url,
+        FIELD41,
+      });
     }
   }
 
-  onChange = e => {
+  onChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  createStudent = e => {
+  createStudent = (e) => {
     e.preventDefault();
     axios.post(API_URL, this.state).then(() => {
       this.props.resetState();
@@ -33,7 +156,7 @@ class NewStudentForm extends React.Component {
     });
   };
 
-  editStudent = e => {
+  editStudent = (e) => {
     e.preventDefault();
     axios.put(API_URL + this.state.pk, this.state).then(() => {
       this.props.resetState();
@@ -41,47 +164,49 @@ class NewStudentForm extends React.Component {
     });
   };
 
-  defaultIfEmpty = value => {
+  defaultIfEmpty = (value) => {
     return value === "" ? "" : value;
   };
 
   render() {
     return (
-      <Form onSubmit={this.props.student ? this.editStudent : this.createStudent}>
+      <Form
+        onSubmit={this.props.student ? this.editStudent : this.createStudent}
+      >
         <FormGroup>
-          <Label for="name">Name:</Label>
+          <Label for="brand">Brand:</Label>
           <Input
             type="text"
-            name="name"
+            name="nambrande"
             onChange={this.onChange}
-            value={this.defaultIfEmpty(this.state.name)}
+            value={this.defaultIfEmpty(this.state.brand)}
           />
         </FormGroup>
         <FormGroup>
-          <Label for="email">Email:</Label>
+          <Label for="model">Model</Label>
           <Input
-            type="email"
-            name="email"
+            type="text"
+            name="model"
             onChange={this.onChange}
-            value={this.defaultIfEmpty(this.state.email)}
+            value={this.defaultIfEmpty(this.state.model)}
           />
         </FormGroup>
         <FormGroup>
-          <Label for="document">Document:</Label>
+          <Label for="network_technology">Network Technology:</Label>
           <Input
             type="text"
-            name="document"
+            name="network_technology"
             onChange={this.onChange}
-            value={this.defaultIfEmpty(this.state.document)}
+            value={this.defaultIfEmpty(this.state.network_technology)}
           />
         </FormGroup>
         <FormGroup>
-          <Label for="phone">Phone:</Label>
+          <Label for="twoG_bands">Two G Bands:</Label>
           <Input
             type="text"
-            name="phone"
+            name="twoG_bands"
             onChange={this.onChange}
-            value={this.defaultIfEmpty(this.state.phone)}
+            value={this.defaultIfEmpty(this.state.twoG_bands)}
           />
         </FormGroup>
         <Button>Send</Button>
@@ -91,7 +216,6 @@ class NewStudentForm extends React.Component {
 }
 
 export default NewStudentForm;
-
 // import React from "react";
 // import { Button, Form, FormGroup, Input, Label } from "reactstrap";
 

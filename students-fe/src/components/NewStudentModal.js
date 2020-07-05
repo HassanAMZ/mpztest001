@@ -16,10 +16,10 @@ class NewStudentModal extends Component {
   render() {
     const create = this.props.create;
 
-    var title = "Editing Student";
+    var title = "Editing Phones";
     var button = <Button onClick={this.toggle}>Edit</Button>;
     if (create) {
-      title = "Creating New Student";
+      title = "Creating New Phones";
 
       button = (
         <Button
@@ -35,7 +35,7 @@ class NewStudentModal extends Component {
 
     return (
       <Fragment>
-        {/* {button} */}
+        {button}
         <Modal isOpen={this.state.modal} toggle={this.toggle}>
           <ModalHeader toggle={this.toggle}>{title}</ModalHeader>
 

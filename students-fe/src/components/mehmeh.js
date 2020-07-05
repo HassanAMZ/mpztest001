@@ -3,7 +3,7 @@ import { Table } from "reactstrap";
 import NewStudentModal from "./NewStudentModal";
 
 import ConfirmRemovalModal from "./ConfirmRemovalModal";
-//material ui
+
 class StudentList extends Component {
   render() {
     const students = this.props.students;
@@ -94,7 +94,7 @@ class StudentList extends Component {
                 <td>{student.primary_camera}</td>
                 <td>{student.secondary_camera}</td>
                 <td>{student.loud_speaker}</td>
-
+               
                 <td>{student.audio_jack}</td>
                 <td>{student.WLAN}</td>
                 <td>{student.bluetooth}</td>
