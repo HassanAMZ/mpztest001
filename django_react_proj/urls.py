@@ -15,15 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, re_path
-from students import views as studentsviews
 from django.conf.urls import url
 
 from mpz import views as mpzviews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    re_path(r'^api/students/$', studentsviews.students_list),
-    re_path(r'^api/students/(?P<pk>[0-9]+)$', studentsviews.students_detail),
     re_path(r'^api/mpz/$', mpzviews.mpz_list),
     re_path(r'^api/mpz/(?P<pk>[0-9]+)$', mpzviews.mpz_detail),
 

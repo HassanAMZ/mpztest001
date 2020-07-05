@@ -57,9 +57,7 @@ export default function ListItems({ Data }) {
               >
                 <TableHead>
                   <TableRow>
-                    <StyledTableCell noWrap="false">
-                      {student.model}
-                    </StyledTableCell>
+                    <StyledTableCell>{student.model}</StyledTableCell>
                     <StyledTableCell></StyledTableCell>
                   </TableRow>
                 </TableHead>

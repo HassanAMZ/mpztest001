@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 
+
 class Mobiledetail(models.Model):
     brand = models.CharField(max_length=200, blank=True)
     model = models.CharField(max_length=200, blank=True)
@@ -44,6 +45,3 @@ class Mobiledetail(models.Model):
     approx_price_EUR = models.CharField(max_length=200, blank=True)
     img_url = models.CharField(max_length=200, blank=True)
     FIELD41 = models.CharField(max_length=200, blank=True)
-
-    def __str__(self):
-        return self.brand
